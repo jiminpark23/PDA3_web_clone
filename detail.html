@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상세페이지</title>
+    <link rel="stylesheet" href="./style.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-tag-cloud.min.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="./index.html">jiminshop</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./shop.html">SHOP</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">ABOUT US</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"></a>
+                    <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">PROJECT</a></li>
+                    <li><a class="dropdown-item" href="#">COMMUNITY</a></li>
+                    <li><a class="dropdown-item" href="#">CONTACT</a></li>
+                    </ul>
+                </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section>
+        <div class="detail-container">
+            <img class="detail-img" src="https://images.pet-friends.co.kr/storage/pet_friends/product/id/0/f/4/b/0/f/c/0f4b0fc2228e1ab078665a341a94c36b/10001/36192fb241814bab5beec8a4a836086e_square_300.jpeg">
+            <div class="detail-content">
+                <h3>로얄캐닌 독 미니 인도어 퍼피</h3>
+                <p class="detail-origin-price">41,000원</p>
+                <p class="detail-sale-price"><span class="discount-rate">17%</span> 33,990원</p>
+            <hr>
+            <h5>특허 항산화제로 
+                아기의 면역력을 
+                지켜줘요</h5>
+            <br>
+            <pre>
+아기 강아지들이 아프지 않고
+건강하게 자라는 방법은 없을까요?
+
+면역력이 약한 아기 강아지들을 위해
+면역기능에 도움 되는 특허 성분이 가득 담긴
+로얄캐닌의 '미니 인도어 퍼피'를 추천드려요.
+
+성장기 강아지들이 취약한 소화기에도
+도움이 되는 성분이 함유되어 있어요.
+
+쑥쑥 자라는 성장기 강아지들에게 추천하는 사료 :)
+
+            </pre>
+            <hr>
+            <h5>상품 리뷰</h5>
+            <form action="/shop.html" method="post"> <!-- action: 어디로 전송할 것인지, method: request 방법-->
+                <textarea name="comments" placeholder="상품에 대한 리뷰를 남겨주세요" cols="50" rows="3"></textarea>
+                <button type="submit">제출</button>
+            </form>
+            <br><br><br><br>
+        </div>    
+
+        </div>
+    </section>
+        
+    <!-- 워드클라우드 -->
+    <section>
+        <div id="wordCloudContainer" style="width: 100%; height: 400px;"></div>
+    </section>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+    <script>
+        // 워드 클라우드를 생성하는 함수
+        function generateWordCloud() {
+            anychart.onDocumentReady(function () {
+                // 샘플 데이터 (자신의 데이터로 교체)
+                var data = [
+                    { x: "테슬라", value: 80 },
+                    { x: "애플", value: 70 },
+                    { x: "아마존", value: 60 },
+                    { x: "월마트", value: 50 },
+                    { x: "삼성", value: 40 },
+                    { x: "현대차", value: 30 },
+                    { x: "구글", value: 20 },
+                    { x: "넥슨", value: 10 },
+                    { x: "SK하이닉스", value: 25 },
+                    { x: "LG생활건강", value: 8 },
+                    { x: "카카오", value: 5 },
+                    { x: "텐센트", value: 3 },
+                    { x: "페이스북", value: 7 },
+                    { x: "넷마블", value: 24 },
+                    { x: "쇼박스", value: 35 },
+                    { x: "CJ E&M", value: 16 },
+                    { x: "디즈니", value: 47 },
+                    { x: "넷플릭스", value: 19 },
+                ];
+
+                // 워드 클라우드 차트 생성
+                var chart = anychart.tagCloud(data);
+
+                // 차트가 표시될 컨테이너 설정
+                chart.container('wordCloudContainer');
+
+                // 차트 그리기
+                chart.draw();
+            });
+        }
+
+        // 워드 클라우드 생성 함수 호출
+        generateWordCloud();
+    </script>
+</body>
+
+</html>

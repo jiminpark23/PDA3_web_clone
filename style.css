@@ -1,0 +1,93 @@
+ol, ul {
+	list-style: none;
+}
+
+/* home */
+.img-container {
+    display: flex;
+    width: auto;
+    height: auto;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+footer {
+    padding: 40px 0px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+}
+.insta {
+    width: 1.3m;
+    height: 1.3em;
+    margin: 30px;
+}
+
+
+/* shop */
+.nav {
+    padding: 20px 0px;
+}
+.nav-item {
+    font-size: 12px;
+}
+.product-container {
+    display: flex;
+    padding: 15px 0px;
+    justify-content: center;
+}
+.detail-link {
+    color: black;
+    text-decoration-line: none;
+}
+.products {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-row-gap: 20px;
+    grid-column-gap: 20px;
+    padding-inline-start: 0px;
+}
+.prod-name {
+    font-size: 13px;
+    width: 300px;
+    margin: 0px;
+}
+.origin-price {
+    font-size: 11.5px;
+    text-decoration: line-through;
+    margin: 0px;
+}
+.sale-price {
+    font-size: 15px;
+    margin: 0px;
+}
+.discount-rate {
+    color: red;
+}
+
+/* 상세페이지 */
+.detail-container {
+    display: flex;
+    padding: 30px 100px;
+    gap: 40px;
+}
+.detail-img {
+    width: 45%;
+    height: auto;
+}
+.detail-content {
+    padding: 0px 50px;
+
+}
+.detail-origin-price {
+    font-size: 16px;
+    text-decoration-line: line-through;
+    margin: 0px;
+}
+.detail-sale-price {
+    font-size: 20px;
+    margin: 0px;
+}
