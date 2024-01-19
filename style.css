@@ -8,11 +8,11 @@ ol, ul {
     width: auto;
     height: auto;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 1.2vw;
 }
 
 footer {
-    padding: 40px 0px;
+    padding: 2.3vw 0px;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -20,23 +20,26 @@ footer {
 
 }
 .insta {
-    width: 1.3m;
+    width: 1.3vw;
     height: 1.3em;
-    margin: 30px;
+    margin: 1.9vw;
 }
 
 
 /* shop */
 .nav {
-    padding: 20px 0px;
+    padding: 1.2vw 0;
 }
 .nav-item {
-    font-size: 12px;
+    font-size: 0.9vw;
 }
 .product-container {
     display: flex;
-    padding: 15px 0px;
+    padding: 1vw 0;
     justify-content: center;
+}
+.product-img {
+    width: 20vw;
 }
 .detail-link {
     color: black;
@@ -46,22 +49,22 @@ footer {
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-row-gap: 20px;
-    grid-column-gap: 20px;
-    padding-inline-start: 0px;
+    grid-row-gap: 1.2vw;
+    grid-column-gap: 1.2vw;
+    padding-inline-start: 0;
 }
 .prod-name {
-    font-size: 13px;
-    width: 300px;
-    margin: 0px;
+    font-size: 1vw;
+    width: 20vw;
+    margin: 0;
 }
 .origin-price {
-    font-size: 11.5px;
+    font-size: 0.8vw;
     text-decoration: line-through;
     margin: 0px;
 }
 .sale-price {
-    font-size: 15px;
+    font-size: 1vw;
     margin: 0px;
 }
 .discount-rate {

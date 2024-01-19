@@ -91,8 +91,8 @@
         function generateWordCloud() {
             anychart.onDocumentReady(function () {
                 // 샘플 데이터 (자신의 데이터로 교체)
-                var data = [
-                { x: '간식', value: 15 },
+                var petProductsData = [
+                    { x: '간식', value: 15 },
                     { x: '장난감', value: 10 },
                     { x: '하우스', value: 8 },
                     { x: '목줄', value: 12 },
@@ -122,31 +122,21 @@
                     { x: '애완동물 담요', value: 8 },
                     { x: '물병', value: 5 },
                     { x: '털 고리', value: 3 },
-                    // { x: "테슬라", value: 80 },
-                    // { x: "애플", value: 70 },
-                    // { x: "아마존", value: 60 },
-                    // { x: "월마트", value: 50 },
-                    // { x: "삼성", value: 40 },
-                    // { x: "현대차", value: 30 },
-                    // { x: "구글", value: 20 },
-                    // { x: "넥슨", value: 10 },
-                    // { x: "SK하이닉스", value: 25 },
-                    // { x: "LG생활건강", value: 8 },
-                    // { x: "카카오", value: 5 },
-                    // { x: "텐센트", value: 3 },
-                    // { x: "페이스북", value: 7 },
-                    // { x: "넷마블", value: 24 },
-                    // { x: "쇼박스", value: 35 },
-                    // { x: "CJ E&M", value: 16 },
-                    // { x: "디즈니", value: 47 },
-                    // { x: "넷플릭스", value: 19 },
                 ];
 
+                // 뼈다귀 모양의 SVG 경로
+                var bonePath = 'M24 2C12 2 2 12 2 24s10 22 22 22s22-10 22-22S36 2 24 2zm0 40c-1.1 0-2-0.9-2-2s0.9-2 2-2s2 0.9 2 2S25.1 42 24 42zM12 24c-1.1 0-2-0.9-2-2s0.9-2 2-2s2 0.9 2 2S13.1 24 12 24zM16 34c-1.1 0-2-0.9-2-2s0.9-2 2-2s2 0.9 2 2S17.1 34 16 34zM24 44c-1.1 0-2-0.9-2-2s0.9-2 2-2s2 0.9 2 2S25.1 44 24 44zM28 34c-1.1 0-2-0.9-2-2s0.9-2 2-2s2 0.9 2 2S29.1 34 28 34zM36 24c-1.1 0-2-0.9-2-2s0.9-2 2-2s2 0.9 2 2S37.1 24 36 24zM40 34c-1.1 0-2-0.9-2-2s0.9-2 2-2s2 0.9 2 2S41.1 34 40 34z';
+
                 // 워드 클라우드 차트 생성
-                var chart = anychart.tagCloud(data);
+                var chart = anychart.tagCloud(petProductsData);
 
                 // 차트가 표시될 컨테이너 설정
                 chart.container('wordCloudContainer');
+
+                // 차트 모양을 강아지 모양의 SVG로 설정
+                chart.background().enabled(true).fill('transparent');
+                chart.angles([0, 0, 0]).mode('hex');
+                chart.container().getStage().container().style.backgroundImage = 'url("data:image/svg+xml;utf8,' + bonePath + '")';
 
                 // 차트 그리기
                 chart.draw();
